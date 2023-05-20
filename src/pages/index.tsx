@@ -28,8 +28,8 @@ const getLoggedUserInfo = async (token: any) => {
 };
 
 export default function Home() {
-  const [spotifyToken, setSpotifyToken] = useState(null);
-  const [loggedUser, setLoggedUser] = useState(null);
+  const [spotifyToken, setSpotifyToken] = useState<any>();
+  const [loggedUser, setLoggedUser] = useState<any>();
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("spotify_token") || "null");
@@ -88,7 +88,6 @@ export default function Home() {
         <Link
           css={{ fontSize: "$sm" }}
           href={loggedUser?.external_urls.spotify}
-          size="$sm"
         >
           {loggedUser?.external_urls.spotify}
         </Link>
